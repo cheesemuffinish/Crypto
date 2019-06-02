@@ -1,46 +1,9 @@
 
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
 #include<stdio.h>
  
 int main()
 {
-	char message[100], ch;
+	char message[100], chars;
 	int i, key;
 	
 	printf("Enter a message to encrypt: ");
@@ -49,25 +12,25 @@ int main()
 	scanf("%d", &key);
 	
 	for(i = 0; message[i] != '\0'; ++i){
-		ch = message[i];
+		chars = message[i];
 		
-		if(ch >= 'a' && ch <= 'z'){
-			ch = ch + key;
+		if(chars >= 'a' && chars <= 'z'){
+			chars = chars + key;
 			
-			if(ch > 'z'){
-				ch = ch - 'z' + 'a' - 1;
+			if(chars > 'z'){
+				chars = chars - 'z' + 'a' - 1;
 			}
 			
-			message[i] = ch;
+			message[i] = chars;
 		}
-		else if(ch >= 'A' && ch <= 'Z'){
-			ch = ch + key;
+		else if(chars >= 'A' && chars <= 'Z'){
+			chars = chars + key;
 			
-			if(ch > 'Z'){
-				ch = ch - 'Z' + 'A' - 1;
+			if(chars > 'Z'){
+				chars = chars - 'Z' + 'A' - 1;
 			}
 			
-			message[i] = ch;
+			message[i] = chars;
 		}
 	}
 	
